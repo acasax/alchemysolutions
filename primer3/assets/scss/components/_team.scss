@@ -1,0 +1,248 @@
+@use '../abstracts/variables' as *;
+
+/*
+************
+*************************
+17. Team
+******************************************************* 
+*************************************************************** */
+
+.team_area {
+    .team_title {
+        @media #{$xs,$sm} {
+            text-align: left!important;
+        }
+        & h2 {
+            font-size: 46px;
+            font-weight: 800;
+        }
+        & p {
+            line-height: 26px;
+            margin-bottom: 45px;
+            @media #{$xs,$sm} {
+                margin-bottom: 30px;
+            }
+            & br {
+                @media #{$xs,$sm} {
+                    display: none;
+                }
+            }
+        }
+    }
+    @media #{$xs,$sm,$md} {
+        &:is(.pt-55) {
+            padding-top: 0;
+        }
+    }
+    .team_member_profile {
+        @media #{$xs,$sm,$md} {
+            padding-bottom: 30px;
+        }
+    }
+    & .team_member_profile {
+        .repto_member_info {
+            & h5 {
+                font-weight: 700;
+                margin-bottom: 10px;
+                a {
+                    text-decoration: none;
+                    &:hover {
+                        color: var(--clr-theme-1);
+                    }
+                }
+            }
+            & p {
+                line-height: 15px;
+                font-size: 15px;
+            }
+            @media #{$xs,$sm} {
+                &:is(.pt-25) {
+                    padding-top: 15px;
+                }
+                &:is(.text-center) {
+                    text-align: left!important;
+                }
+            }
+        }
+        .repto_team_img {
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            &::after {
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 0;
+                z-index: 1;
+                content: "";
+                opacity: 0.85;
+                position: absolute;
+                transition: 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+                background-color: #00142d70;
+                border-radius: 5px;
+                pointer-events: none;
+            }
+            &:hover {
+                border-radius: 5px;
+                &:after {
+                    height: 100%;
+                }
+                & .repto_team_member_social_action {
+                    opacity: 1;
+                    visibility: visible;
+                    bottom: 0;
+                }
+                & img {
+                    transform: scale(1.08);
+                    border-radius: 5px;
+                }
+            }
+            a {
+                display: block;
+            }
+            position: relative;
+            .repto_team_member_social_action {
+                position: absolute;
+                bottom: -100%;
+                display: block;
+                margin: 20px auto;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.5s ease-out 0s;
+                transition-duration: 0.5s;
+                z-index: 2;
+                &:hover {
+                    bottom: 0px;
+                }
+                & a {
+                    height: 34px;
+                    width: 34px;
+                    line-height: 34px;
+                    margin: 0 5px;
+                    background-color: var(--clr-common-sada);
+                    display: inline-block;
+                    text-align: center;
+                    border-radius: 5px;
+                    color: var(--clr-body-heading);
+                    font-size: 12px;
+                    transition: 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+                    &:hover {
+                        background: var(--clr-theme-1);
+                        & i {
+                            color: var(--clr-common-sada);
+                        }
+                        &:before {
+                            height: 100%;
+                            color: var(--clr-theme-1);
+                        }
+                    }
+                    &:before {
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        height: 0;
+                        bottom: auto;
+                        z-index: -1;
+                        content: "";
+                        position: absolute;
+                        transition: all 0.3s ease-in-out;
+                        color: transparent;
+                    }
+                }
+            }
+            & img {
+                border-radius: 5px;
+                width: 100%;
+            }
+        }
+    }
+    .view_reviews_btn {
+        & a {
+            display: inline-block;
+            height: 52px;
+            padding: 10px 33px;
+            & i {
+                position: relative;
+                top: 5px;
+                font-size: 20px;
+            }
+        }
+        @media #{$xs, $sm} {
+            &:is(.pt-40) {
+                padding-top: 0px;
+                text-align: left!important;
+            }
+        }
+    }
+    @media #{$md} {
+        &:is(.pt-45) {
+            .col-sm-6 {
+                &:nth-child(4),
+                &:nth-child(5) {
+                    .team_member_profile {
+                        padding-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Team Page Css
+.team_area {
+    &.team_page {
+        padding-top: 115px;
+        .team_title {
+            padding-bottom: 35px;
+            @media #{$xs,$sm} {
+                padding-bottom: 30px;
+            }
+            h2 {
+                padding-top: 10px;
+                @media #{$xl} {
+                    margin-bottom: 5px;
+                }
+                @media #{$xs,$sm,$md,$lg} {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .team_member_profile {
+            .repto_member_info {
+                p {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        @media #{$xs} {
+            & :is(.pt-65) {
+                padding-top: 0;
+                & :is(.col-sm-6) {
+                    &:last-child {
+                        .team_member_profile {
+                            padding-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+        @media #{$sm,$md} {
+            & :is(.pt-65) {
+                padding-top: 0;
+                & :is(.col-sm-6) {
+                    &:nth-child(3),
+                    &:nth-child(4) {
+                        .team_member_profile {
+                            padding-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+        .team_member_profile {
+            @media #{$xs,$sm,$md} {
+                padding-bottom: 45px;
+            }
+        }
+    }
+}

@@ -1,0 +1,137 @@
+@use '../abstracts/variables' as *;
+
+/*
+************
+*************************
+10. Service Details
+******************************************************* 
+*************************************************************** */
+
+.service_area {
+    &.service_details {
+        background: var(--clr-common-sada);
+        padding-bottom: 115px;
+        .details_left {
+            .service_single {
+                filter: drop-shadow(0px 20px 25px #0f0d1d20);
+                height: 143px;
+                padding: 35px 30px;
+                padding-right: 20px;
+                margin-bottom: 20px;
+                @media #{$lg} {
+                    height: auto;
+                }
+                @media #{$xs} {
+                    padding: 35px 19px;
+                }
+                @media #{$sm} {
+                    padding: 35px 30px;
+                    height: auto;
+                }
+                .service_right_content {
+                    h5 {
+                        margin-bottom: 5px;
+                        transition: all 0.3s linear 0s;
+                    }
+                }
+                .service_left_icon {
+                    .svg-icon {
+                        background-color: var(--clr-theme-1);
+                        border: none;
+                        svg {
+                            .st0 {
+                                stroke: var(--clr-common-sada);
+                            }
+                        }
+                    }
+                    .icon-1 {
+                        background-color: #fa5a5b;
+                    }
+                    .icon-2 {
+                        background-color: #ff9333;
+                    }
+                    .icon-3 {
+                        background-color: #1d9fe7;
+                    }
+                    .icon-4 {
+                        background-color: #b64bf6;
+                    }
+                }
+                &:hover {
+                    transform: translateY(0px);
+                }
+            }
+        }
+        .details_right {
+            .details_right_img {
+                @media #{$md} {
+                    padding-top: 30px;
+                }
+                @media #{$xs} {
+                    height: 350px;
+                    padding-top: 30px;
+                }
+                & img {
+                    border-radius: 5px;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            .details_inner_content {
+                @media #{$xs,$md,$lg,$xl,$xxl} {
+                    &:is(.pt-45) {
+                        padding-top: 25px;
+                    }
+                    &:is(.pt-35) {
+                        padding-top: 25px;
+                    }
+                }
+                h3 {
+                    font-size: 34px;
+                    font-weight: 700;
+                    @media #{$lg} {
+                        font-size: 32px;
+                    }
+                    @media #{$xs,$sm} {
+                        font-size: 25px;
+                    }
+                }
+                p {
+                    line-height: 26px;
+                    font-size: 15px;
+                    margin-bottom: 0;
+                }
+            }
+            .inner_content_list {
+                @media #{$xs,$sm} {
+                    padding-top: 30px;
+                }
+                h5 {
+                    font-size: 18px;
+                    font-weight: 700;
+                }
+                p {
+                    line-height: 26px;
+                    font-size: 15px;
+                    margin-bottom: 0;
+                }
+            }
+            .details_overview {
+                @media #{$xs,$sm,$md} {
+                    padding-top: 45px;
+                }
+                .overview_item_1 {
+                    @media #{$xs} {
+                        padding-bottom: 30px;
+                    }
+                }
+                img {
+                    border-radius: 5px;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}

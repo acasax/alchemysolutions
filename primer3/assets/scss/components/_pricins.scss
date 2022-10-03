@@ -1,0 +1,292 @@
+@use '../abstracts/variables' as *;
+
+/*
+************
+*************************
+11. Pricing
+******************************************************* 
+*************************************************************** */
+
+.pricing_area {
+    position: relative;
+    .pricing_shape {
+        background-image: url(../img/pricing/pricing_shape_1.png);
+        width: 80px;
+        height: 93px;
+        position: absolute;
+        right: 0px;
+        background-repeat: no-repeat;
+        bottom: 370px;
+    }
+    .feature_overview {
+        @media #{$xs,$sm} {
+            text-align: left!important;
+        }
+        & h2 {
+            font-size: 46px;
+            font-weight: 800;
+            padding-top: 18px;
+        }
+        & p {
+            @media #{$xs,$sm,$md,$lg,$xl} {
+                margin-bottom: 0;
+            }
+            & br {
+                @media #{$xs,$sm} {
+                    display: none;
+                }
+            }
+        }
+    }
+    .pricing_tabs {
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @media #{$xs,$sm} {
+                justify-content: flex-start;
+            }
+            li {
+                .nav-link {
+                    padding: 0;
+                    padding-right: 90px;
+                    background: transparent;
+                    border-radius: 0;
+                    font-weight: 600;
+                    text-transform: capitalize;
+                    color: #a3afb9;
+                    position: relative;
+                    outline: none;
+                    font-size: 16px;
+                    border: none;
+                    &.active {
+                        color: var(--clr-body-heading);
+                    }
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        right: 15px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 15px;
+                        height: 15px;
+                        border-radius: 50%;
+                        background: var(--clr-theme-1);
+                        z-index: 1;
+                        transition: all 0.3s ease-out 0s;
+                    }
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        right: 10px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        background: var(--clr-common-white);
+                        border-radius: 30px;
+                        background: #fd4a3610;
+                        width: 60px;
+                        height: 24px;
+                        z-index: 1;
+                        transition: all 0.3s ease-out 0s;
+                    }
+                    &.active::before {
+                        right: 50px;
+                    }
+                }
+                &.nav-item:last-child .nav-link {
+                    padding-right: 0;
+                    background: transparent;
+                }
+                &.nav-item:last-child .nav-link {
+                    &::after,
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    .price_plan_single {
+        background-color: var(--clr-common-sada);
+        filter: drop-shadow(0px 0px 40px #0f0d1d12);
+        padding: 49px 39px;
+        border-radius: 5px;
+        transition: transform 0.3s cubic-bezier(0.21, 0.6, 0.44, 2.18);
+        &:hover {
+            transform: translateY(-10px);
+        }
+        @media #{$lg} {
+            padding: 40px 30px;
+        }
+        @media #{$md} {
+            margin-bottom: 55px;
+            &:is(.price_single_last) {
+                margin-bottom: 0;
+            }
+        }
+        @media #{$xs} {
+            padding: 33px;
+            margin-bottom: 55px;
+            &:is(.price_single_last) {
+                margin-bottom: 0;
+            }
+        }
+        .price_amount_section {
+            h5 {
+                margin-bottom: 0;
+            }
+            h2 {
+                font-size: 40px;
+                font-weight: bold;
+                @media #{$xs} {
+                    font-size: 36px;
+                }
+            }
+        }
+        .plan_package_list {
+            ul {
+                list-style: none;
+                li {
+                    line-height: 34px;
+                    i {
+                        &.icon_close {
+                            color: #fa2356;
+                            font-size: 18px;
+                            transform: translateY(1px);
+                            display: inline-block;
+                        }
+                        &.icon_check {
+                            color: #1ba231;
+                            font-size: 18px;
+                            transform: translateY(3px);
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+            a {
+                width: 100%;
+                display: block;
+                text-align: center;
+                margin-top: 50px;
+                margin-bottom: 38px;
+                padding: 10px 33px;
+                &.standard_btn {
+                    background: var(--clr-theme-1);
+                    color: var(--clr-common-sada);
+                    border: 2px solid var(--clr-theme-1);
+                }
+                @media #{$xs, $lg} {
+                    margin-top: 30px;
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+}
+
+
+/* Home-2 Css Start */
+
+.pricing_area_2 {
+    background-color: var(--clr-theme-2);
+    position: relative;
+    z-index: 9;
+    @media #{$xs,$sm} {
+        &:is(.pt-110) {
+            padding-top: 115px;
+        }
+    }
+    .h2_pricing_shape1 {
+        background-image: url(../img/pricing/h2_pricing_shape_1.png);
+        width: 96%;
+        height: 87%;
+        position: absolute;
+        top: 115px;
+        right: 30px;
+        z-index: -9;
+        opacity: .7;
+    }
+    .h2_pricing_shape2 {
+        background-image: url(../img/pricing/h2_pricing_shape_2.png);
+        width: 88px;
+        height: 153px;
+        position: absolute;
+        top: 0px;
+        right: 0;
+        z-index: -9;
+        @media #{$xs, $sm} {
+            height: 120px;
+        }
+    }
+    .h2_pricing_shape3 {
+        background-image: url(../img/pricing/h2_pricing_shape_3.png);
+        width: 78px;
+        height: 176px;
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        z-index: -9;
+    }
+    .feature_overview {
+        @media #{$xs,$sm} {
+            text-align: left!important;
+        }
+        & p {
+            @media #{$xs,$sm} {
+                margin-bottom: 0;
+            }
+        }
+        & h2 {
+            & br {
+                @media #{$xs,$sm,$md,$lg} {
+                    display: none;
+                }
+            }
+        }
+    }
+    .price_plan_2 {
+        padding: 50px 60px;
+        @media #{$lg} {
+            padding: 35px;
+        }
+        @media #{$md} {
+            padding: 45px;
+        }
+        @media #{$xs,$sm} {
+            padding: 35px;
+        }
+        & h2 {
+            color: var(--clr-theme-1);
+            & span {
+                font-size: 20px;
+                display: inline-block;
+                transform: translate(-7px, -1px);
+            }
+        }
+        .price_amount_section {
+            & h5 {
+                margin-bottom: 5px;
+            }
+        }
+        .plan_package_list {
+            ul {
+                li {
+                    color: var(--clr-body-heading);
+                    i.icon_check {
+                        color: var(--clr-body-heading);
+                        padding-right: 10px;
+                    }
+                }
+            }
+            & a {
+                width: 140px;
+                padding: 10px 15px;
+                margin-bottom: 25px;
+            }
+        }
+    }
+}
+
+
+/* Home-2 Css End */

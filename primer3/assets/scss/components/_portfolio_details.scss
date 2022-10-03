@@ -1,0 +1,140 @@
+@use '../abstracts/variables' as *;
+
+/*
+************
+*************************
+20. Portfolio Details
+******************************************************* 
+*************************************************************** */
+
+.portfolio_details {
+    .portfolio_details_left {
+        img {
+            border-radius: 10px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .portfolio_details_right {
+        padding-left: 100px;
+        @media #{$xxl} {
+            padding-left: 50px;
+        }
+        @media #{$md,$lg,$xl} {
+            padding-left: 10px;
+            padding-top: 0;
+        }
+        @media #{$xs,$sm} {
+            padding-left: 0;
+            padding-top: 35px;
+        }
+        .brand_title {
+            h2 {
+                font-size: 40px;
+                font-weight: 700;
+                transform: translateY(-10px);
+                line-height: 52px;
+                @media #{$lg} {
+                    font-size: 38px!important;
+                    line-height: 1.2;
+                }
+                @media #{$xs,$sm} {
+                    font-size: 35px;
+                    transform: translateY(0px);
+                    line-height: normal;
+                }
+                & br {
+                    @media #{$xs,$sm,$md,$lg} {
+                        display: none;
+                    }
+                }
+            }
+        }
+        .project_name {
+            padding-top: 10px;
+            h5 {
+                font-size: 18px;
+                margin-bottom: 5px;
+                font-weight: 700;
+                @media #{$xs,$sm} {
+                    font-size: 17px;
+                }
+            }
+            p {
+                color: var(--clr-body-heading);
+                font-size: 15px;
+                margin-bottom: 0;
+            }
+        }
+        .project_customer,
+        .project_tag {
+            padding-top: 20px;
+        }
+        .project_description {
+            padding-top: 50px;
+            @media #{$lg} {
+                padding-top: 30px;
+            }
+            h5 {
+                font-size: 22px;
+                font-weight: 700;
+            }
+            p {
+                font-size: 18px;
+                line-height: 28px;
+                margin-bottom: 10px;
+                @media #{$lg,$md} {
+                    margin-bottom: 0px;
+                }
+                @media #{$xs,$sm} {
+                    font-size: 16px;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    .pagination_area {
+        @media #{$xs,$sm} {
+            &:is(.pt-100) {
+                padding-top: 60px;
+            }
+        }
+        .pagination_inner {
+            border-top: 1px solid #0c163615;
+            border-bottom: 1px solid #0c163615;
+            padding: 45px 0;
+            @media #{$xs,$sm} {
+                padding: 35px 0;
+            }
+            .pagination_arrow {
+                display: flex;
+                a {
+                    text-decoration: none;
+                    display: flex;
+                    align-items: center;
+                    font-size: 18px;
+                    @media #{$xs,$sm} {
+                        font-size: 16px;
+                    }
+                    & i {
+                        padding-right: 12px;
+                        font-size: 30px;
+                        line-height: 16px;
+                        @media #{$xs,$sm} {
+                            font-size: 24px;
+                            transform: translateY(1px);
+                        }
+                        &.arrow_right {
+                            padding-left: 12px;
+                            padding-right: 0;
+                        }
+                    }
+                    &:hover {
+                        color: var(--clr-theme-1);
+                    }
+                }
+            }
+        }
+    }
+}

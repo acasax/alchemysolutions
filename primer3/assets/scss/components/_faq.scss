@@ -1,0 +1,126 @@
+@use '../abstracts/variables' as *;
+
+/*
+************
+*************************
+22. Faq
+******************************************************* 
+*************************************************************** */
+
+.faq_area {
+    @media #{$xs,$sm,$md} {
+        padding-top: 115px;
+        & :is(.pr-70) {
+            padding-right: calc(var(--bs-gutter-x)/ 2);
+        }
+    }
+    @media #{$lg} {
+        & :is(.pr-70) {
+            padding-right: 50px;
+        }
+    }
+    & .home3_faq_shape1 {
+        background-image: url(../img/faq/home3_faq_shape1.png);
+        width: 179px;
+        height: 100px;
+        position: absolute;
+        top: 0px;
+        left: 0;
+    }
+    .faq_wrapper_main {
+        left: inherit;
+        right: 0;
+        @media #{$xs,$sm} {
+            padding-top: 50px;
+        }
+    }
+    .about_right_content {
+        @media #{$xs,$sm,$md} {
+            padding-top: 0;
+        }
+        & p {
+            margin-bottom: 45px;
+        }
+        .faq_content_wrap {
+            @media #{$md} {
+                padding-bottom: 50px;
+            }
+        }
+    }
+}
+
+.faq_accordion {
+    .accordion-button:not(.collapsed) {
+        background-color: transparent;
+    }
+    .accordion-button:after {
+        right: 0;
+        top: 14px;
+        width: 50px;
+        height: 50px;
+        content: "\2b";
+        line-height: 50px;
+        position: absolute;
+        text-align: center;
+        border-radius: 100%;
+        transition: 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        font-family: "Font Awesome 6 Free";
+        background-image: none;
+        font-weight: 900;
+        @media #{$xs,$sm} {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            left: 10px;
+            height: auto;
+            width: auto;
+            line-height: inherit;
+            top: 0;
+        }
+    }
+    .accordion-button:not(.collapsed):after {
+        content: "\f068";
+        transform: rotate(360deg);
+    }
+    .accordion_item {
+        & button {
+            &:is(.accordion-button) {
+                background-color: var(--clr-theme-1);
+                color: var(--clr-common-sada);
+                font-size: 16px;
+                font-weight: 600;
+                padding: 26px 39px;
+                border-radius: 5px 5px 0 0;
+                @media #{$lg} {
+                    padding: 20px 24px;
+                }
+                @media #{$xs,$sm} {
+                    padding: 20px 25px;
+                }
+                &:focus {
+                    box-shadow: none;
+                    border-color: none;
+                }
+            }
+            &:is(.accordion-button.collapsed) {
+                background-color: var(--clr-common-sada);
+                color: var(--clr-body-heading);
+                border-radius: 5px;
+            }
+        }
+        .accordion-collapse {
+            background: var(--clr-common-sada);
+            border-radius: 5px;
+            .accordion-body {
+                padding: 39px;
+                @media #{$lg} {
+                    padding: 24px;
+                }
+                @media #{$xs,$sm} {
+                    padding: 25px;
+                }
+            }
+        }
+    }
+}

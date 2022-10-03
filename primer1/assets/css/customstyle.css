@@ -1,0 +1,9 @@
+.menu-button-custom {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .menu-button-custom {
+        display: flex;
+    }
+}

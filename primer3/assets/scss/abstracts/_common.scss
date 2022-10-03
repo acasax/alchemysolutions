@@ -1,0 +1,491 @@
+  /*
+************
+*************************
+
+   Template Name: Repto - Business & Agency Consulting HTML5 Template
+   Description: Repto - Business & Agency Consulting HTML5 Template
+   Author: nhp_Theme
+   Version: 1.0.1
+
+-----------------------------------------------------------------------------------
+
+CSS INDEX
+===================
+
+01. Common
+02. Header
+03. Animated
+04. Slider
+05. Breadcrumb
+06. Button
+07. Features
+08. About
+09. Services
+10. Service Details
+11. Pricing
+12. Call To Action
+13. Testimonial
+14. Free Trials
+15. Blog
+16. Blog Details
+17. Team
+18. Team Details
+19. Case Study
+20. Portfolio Details
+21. Skill Bar
+22. Faq
+23. Feedback
+24. Contact
+25. Error
+26. Back To Top
+27. Footer
+
+******************************************************* 
+*************************************************************** */
+  
+  @use './variables' as *;
+  @use './mixins' as *;
+  @use './colors' as *;
+  /*
+************
+*************************
+01. common
+******************************************************* 
+*************************************************************** */
+  
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+  body {
+      font-family: $inter;
+      font-weight: 400;
+      font-style: normal;
+      color: var(--clr-body-text);
+      font-size: 16px;
+  }
+  
+  .img,
+  img {
+      max-width: 100%;
+      @include transition(.3s);
+  }
+  
+  .f-left {
+      float: left
+  }
+  
+  .f-right {
+      float: right
+  }
+  
+  .fix {
+      overflow: hidden
+  }
+  
+  a,
+  .button {
+      @include transition(.3s);
+  }
+  
+  a:focus,
+  .button:focus {
+      text-decoration: none;
+      outline: none;
+  }
+  
+  a:focus,
+  a:hover {
+      color: inherit;
+      text-decoration: none;
+  }
+  
+  a,
+  button {
+      color: inherit;
+      outline: medium none;
+  }
+  
+  button:focus,
+  input:focus,
+  input:focus,
+  textarea,
+  textarea:focus {
+      outline: 0;
+  }
+  
+  .uppercase {
+      text-transform: uppercase;
+  }
+  
+  .capitalize {
+      text-transform: capitalize;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+      font-family: $inter;
+      color: var(--clr-body-heading);
+      margin-top: 0px;
+      font-weight: 600;
+      text-transform: normal;
+      margin-bottom: 15px;
+  }
+  
+  h1 a,
+  h2 a,
+  h3 a,
+  h4 a,
+  h5 a,
+  h6 a {
+      color: inherit;
+  }
+  
+  h1 {
+      font-size: 60px;
+  }
+  
+  h2 {
+      font-size: 45px;
+  }
+  
+  h3 {
+      font-size: 38px;
+  }
+  
+  h4 {
+      font-size: 28px;
+  }
+  
+  h5 {
+      font-size: 20px;
+  }
+  
+  h6 {
+      font-size: 16px;
+  }
+  
+  ul {
+      margin: 0px;
+      padding: 0px;
+      list-style: none;
+  }
+  
+  p {
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 1.86;
+      margin-bottom: 15px;
+      color: var(--clr-body-text);
+  }
+  
+  hr {
+      border-bottom: 1px solid var(--clr-common-hr_border);
+      border-top: 0 none;
+      margin: 35px 0;
+      padding: 0;
+      opacity: 1;
+  }
+  
+  label {
+      color: var(--clr-body-heading);
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 400;
+  }
+  
+  *::-moz-selection {
+      background-color: var(--clr-body-heading);
+      color: var(--clr-common-sada);
+      text-shadow: none;
+  }
+  
+  ::-moz-selection {
+      background-color: var(--clr-body-heading);
+      color: var(--clr-common-sada);
+      text-shadow: none;
+  }
+  
+  ::selection {
+      background-color: var(--clr-common-kalo);
+      color: var(--clr-common-sada);
+      text-shadow: none;
+  }
+  /* <<<<<<<    Elegent Fonts   >>>>>>>>> */
+  
+  @font-face {
+      font-family: 'ElegantIcons';
+      src: url('../fonts/ElegantIcons.eot');
+      src: url('../fonts/ElegantIcons.eot?#iefix') format('embedded-opentype'), url('../fonts/ElegantIcons.woff') format('woff'), url('../fonts/ElegantIcons.ttf') format('truetype'), url('../fonts/ElegantIcons.svg#ElegantIcons') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  }
+  
+  .arrow_right,
+  .arrow_triangle-right,
+  .icon_question,
+  .icon_menu-square_alt2,
+  .icon_close,
+  .icon_check,
+  .arrow_left,
+  .icon_clock_alt,
+  .icon_mail_alt,
+  .icon_phone,
+  .icon_chat_alt,
+  .icon_tag_alt,
+  .icon_search,
+  .icon_comment_alt,
+  .icon_link {
+      font-family: 'ElegantIcons';
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      font-size: 24px;
+  }
+  
+  .arrow_left:before {
+      content: "\23";
+  }
+  
+  .arrow_right:before {
+      content: "\24";
+  }
+  
+  .arrow_triangle-right:before {
+      content: "\45";
+  }
+  
+  .icon_question:before {
+      content: "\75";
+  }
+  
+  .icon_menu-square_alt2:before {
+      content: "\62";
+  }
+  
+  .icon_close:before {
+      content: "\4d";
+  }
+  
+  .icon_check:before {
+      content: "\4e";
+  }
+  
+  .icon_clock_alt:before {
+      content: "\7d";
+  }
+  
+  .icon_mail_alt:before {
+      content: "\e010";
+  }
+  
+  .icon_phone:before {
+      content: "\e090";
+  }
+  
+  .icon_chat_alt:before {
+      content: "\77";
+  }
+  
+  .icon_tag_alt:before {
+      content: "\e017";
+  }
+  
+  .icon_search:before {
+      content: "\55";
+  }
+  
+  .icon_comment_alt:before {
+      content: "\76";
+  }
+  
+  .icon_link:before {
+      content: "\e02c";
+  }
+  /* <<<<<<<    Input Placeholder   >>>>>>>>> */
+  
+  input {
+      @include placeholder {
+          color: var(--clr-common-kalo);
+          font-size: 14px;
+          opacity: 1;
+      }
+  }
+  /* <<<<<<<    Common Classes   >>>>>>>>> */
+  
+  .fix {
+      overflow: hidden
+  }
+  
+  .clear {
+      clear: both;
+  }
+  
+  .w_img {
+      & img {
+          width: 100%;
+      }
+  }
+  
+  .p-rel {
+      position: relative;
+  }
+  
+  .p-abs {
+      position: absolute;
+  }
+  
+  .section_gap {
+      padding-top: 120px;
+      padding-bottom: 120px;
+  }
+  /* <<<<<<<    Overlay   >>>>>>>>> */
+  
+  [data-overlay] {
+      position: relative;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      &::before {
+          position: absolute;
+          left: 0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          content: "";
+      }
+  }
+  
+  [data-overlay="light"] {
+      &::before {
+          background-color: var(--clr-common-sada);
+      }
+  }
+  
+  [data-overlay="dark"] {
+      &::before {
+          background-color: var(--clr-common-kalo);
+      }
+  }
+  
+  [data-opacity="1"] {
+      &::before {
+          opacity: 0.1;
+      }
+  }
+  
+  [data-opacity="2"] {
+      &::before {
+          opacity: 0.2;
+      }
+  }
+  
+  [data-opacity="3"] {
+      &::before {
+          opacity: 0.3;
+      }
+  }
+  
+  [data-opacity="4"] {
+      &::before {
+          opacity: 0.4;
+      }
+  }
+  
+  [data-opacity="5"] {
+      &::before {
+          opacity: 0.5;
+      }
+  }
+  
+  [data-opacity="6"] {
+      &::before {
+          opacity: 0.6;
+      }
+  }
+  
+  [data-opacity="7"] {
+      &::before {
+          opacity: 0.7;
+      }
+  }
+  
+  [data-opacity="8"] {
+      &::before {
+          opacity: 0.8;
+      }
+  }
+  
+  [data-opacity="9"] {
+      &::before {
+          opacity: 0.9;
+      }
+  }
+  /* <<<<<<<    Margin & Padding>>>>>>>>> */
+  
+  @for $i from 1 through 40 {
+      .mt-#{5 * $i} {
+          margin-top: 5px * $i;
+      }
+  }
+  
+  @for $i from 1 through 40 {
+      .mb-#{5 * $i} {
+          margin-bottom: 5px *$i;
+      }
+  }
+  
+  @for $i from 1 through 40 {
+      .ml-#{5 * $i} {
+          margin-left: 5px * $i;
+      }
+  }
+  
+  @for $i from 1 through 40 {
+      .mr-#{5 * $i} {
+          margin-right: 5px *$i;
+      }
+  }
+  
+  @for $i from 1 through 40 {
+      .pt-#{5 * $i} {
+          padding-top: 5px *$i;
+      }
+  }
+  
+  @for $i from 1 through 40 {
+      .pb-#{5 * $i} {
+          padding-bottom: 5px *$i;
+      }
+  }
+  
+  @for $i from 1 through 40 {
+      .pl-#{5 * $i} {
+          padding-left: 5px *$i;
+      }
+  }
+  
+  @for $i from 1 through 40 {
+      .pr-#{5 * $i} {
+          padding-right: 5px *$i;
+      }
+  }
+  /* <<<<<<<    Declaration   >>>>>>>>> */
+  
+  :root {
+      /**
+    @color declaration
+    */
+      @each $color,
+      $shades in $colors {
+          @each $shade,
+          $value in $shades {
+              --clr-#{$color}-#{$shade}: #{$value};
+          }
+      }
+  }

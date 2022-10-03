@@ -1,0 +1,144 @@
+@use '../abstracts/colors' as *;
+@use '../abstracts/variables' as *;
+
+/*
+************
+*************************
+21. Skill Bar
+******************************************************* 
+*************************************************************** */
+
+.skillbar_main {
+    & :is(.col-xxl-5.p-0) {
+        @media #{$md} {
+            display: flex;
+            align-items: center!important;
+        }
+        @media #{$xs,$sm,$md,$lg,$xl} {
+            padding-right: calc(var(--bs-gutter-x)/ 2)!important;
+            padding-left: calc(var(--bs-gutter-x)/ 2)!important;
+        }
+    }
+    & :is(.align-items-center.pe-0) {
+        @media #{$xs,$sm,$md,$lg} {
+            padding-right: calc(var(--bs-gutter-x)/ 2)!important;
+        }
+    }
+}
+
+.skill_progress_single {
+    & span {
+        font-size: 16px;
+        color: var(--clr-body-heading);
+        font-weight: 400;
+    }
+    .progress:is(.skill_progress) {
+        margin-top: 7px;
+        height: 6px;
+        background-color: #f1f5f8;
+    }
+    .progress:is(.skill_progress) .progress-bar:is(.theme-1) {
+        background-color: var(--clr-theme-1);
+        border-radius: 5px;
+    }
+    .progress_value {
+        float: right;
+    }
+}
+
+.skill_item_left {
+    position: relative;
+    height: 100%;
+    & img {
+        border-radius: 5px;
+        margin-left: 15px;
+        object-fit: cover;
+        height: 100%;
+        @media #{$xs,$sm,$md,$lg} {
+            margin-left: 0;
+            width: 100%;
+        }
+    }
+    &::before {
+        content: "";
+        background-image: url(../img/skillbar/skill_shape2.png);
+        width: 209px;
+        height: 261px;
+        position: absolute;
+        bottom: 90px;
+        left: -85px;
+        z-index: -99;
+        background-repeat: no-repeat;
+        @media #{$md} {
+            bottom: 35px;
+        }
+    }
+}
+
+.skill_item_right {
+    padding-left: 97px;
+    position: relative;
+    @media #{$xs,$sm,$md,$lg,$xl} {
+        padding-left: 0px;
+        padding-top: 0px;
+    }
+    .skill_item_wrapper {
+        @media #{$lg} {
+            padding-right: 0px;
+            margin-bottom: 0;
+            margin-top: 25px;
+        }
+        @media #{$xs,$sm,$md} {
+            padding-right: 0px;
+            margin-bottom: 0;
+        }
+    }
+    & .skill_shape1 {
+        background-image: url(../img/features/feature_shape_1.png);
+        width: 40px;
+        height: 37px;
+        position: absolute;
+        top: -95px;
+        right: -100px;
+        @media #{$lg,$xl} {
+            right: 0;
+        }
+        @media #{$md} {
+            top: -75px;
+            right: 0;
+        }
+        @media #{$xs} {
+            display: none;
+        }
+        @media #{$sm} {
+            top: -95px;
+            right: -100px;
+        }
+    }
+    & h2 {
+        font-size: 46px;
+        font-weight: 800;
+        line-height: 52px;
+        @media #{$lg} {
+            padding-top: 0;
+            line-height: 1.2;
+        }
+        @media #{$md} {
+            padding-top: 0;
+            line-height: 45px;
+            font-size: 33px!important;
+        }
+        @media #{$xs,$sm} {
+            padding-top: 30px;
+            line-height: 35px;
+        }
+        & br {
+            @media #{$xs,$sm,$md,$lg,$xl} {
+                display: none;
+            }
+        }
+    }
+    & p {
+        margin-bottom: 0;
+    }
+}

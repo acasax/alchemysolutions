@@ -1,0 +1,243 @@
+/*
+************
+*************************
+03. Animated
+******************************************************* 
+*************************************************************** */
+
+
+/* circle animation effect 
+----------------------------------*/
+
+.circle-shape-change {
+    -webkit-border-radius: 45% 55% 60% 40% / 59% 56% 44% 41%;
+    -moz-border-radius: 45% 55% 60% 40% / 59% 56% 44% 41%;
+    border-radius: 45% 55% 60% 40% / 59% 56% 44% 41%;
+    -webkit-animation: hero-border 2s linear infinite alternate;
+    -moz-animation: hero-border 2s linear infinite alternate;
+    -o-animation: hero-border 2s linear infinite alternate;
+    animation: hero-border 2s linear infinite alternate;
+}
+
+@keyframes hero-border {
+    0% {
+        -webkit-border-radius: 45% 55% 60% 40% / 59% 56% 44% 41%;
+        -moz-border-radius: 45% 55% 60% 40% / 59% 56% 44% 41%;
+        border-radius: 45% 55% 60% 40% / 59% 56% 44% 41%;
+    }
+    100% {
+        -webkit-border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+        -moz-border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+        border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+    }
+}
+
+// Bounce Effect
+.bounce-slide {
+    animation-duration: 4s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-name: bounceSlide;
+}
+
+@keyframes bounceSlide {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+// Circle Round 
+.circle_round {
+    -webkit-animation: circle-round 6s linear 0s infinite alternate;
+    -moz-animation: circle-round 6s linear 0s infinite alternate;
+    -o-animation: circle-round 6s linear 0s infinite alternate;
+    animation: circle-round 6s linear 0s infinite alternate;
+}
+
+@keyframes circle-round {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+// Spin Infinite 
+.spin_infinite {
+    -webkit-animation: spin 6s linear infinite;
+    -moz-animation: spin 6s linear infinite;
+    -o-animation: spin 6s linear infinite;
+    animation: spin 6s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+// Moving Up and Down
+.move_upDown {
+    -webkit-animation-name: upDown;
+    animation-name: upDown;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+}
+
+@-webkit-keyframes upDown {
+    0% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+    50% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+    100% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes upDown {
+    0% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+    50% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+    100% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+}
+
+
+/* movement animation effect 
+----------------------------------*/
+
+// horizontal move
+.horizontal_move50px {
+    -webkit-animation: horizontal_move50 3s linear 0s infinite alternate;
+    -moz-animation: horizontal_move50 3s linear 0s infinite alternate;
+    -o-animation: horizontal_move50 3s linear 0s infinite alternate;
+    animation: horizontal_move50 3s linear 0s infinite alternate;
+}
+
+@keyframes horizontal_move50 {
+    0% {
+        -webkit-transform: translateX(50px);
+        -moz-transform: translateX(50px);
+        -ms-transform: translateX(50px);
+        transform: translateX(50px);
+    }
+    100% {
+        -webkit-transform: translateX(0px);
+        -moz-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+}
+
+// upward movement 50px
+.upward_movement50px {
+    -webkit-animation: upward_movement50 3s linear 0s infinite alternate;
+    -moz-animation: upward_movement50 3s linear 0s infinite alternate;
+    -o-animation: upward_movement50 3s linear 0s infinite alternate;
+    animation: upward_movement50 3s linear 0s infinite alternate;
+}
+
+@keyframes upward_movement50 {
+    0% {
+        -webkit-transform: translateY(50px);
+        -moz-transform: translateY(50px);
+        -ms-transform: translateY(50px);
+        transform: translateY(50px);
+    }
+    100% {
+        -webkit-transform: translateX(0px);
+        -moz-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+}
+
+
+/* video play animation */
+
+.popup-video:before,
+.popup-video:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "";
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #cccccc;
+    animation: popupBtn 1.8s linear infinite;
+}
+
+.popup-video:before {
+    animation-delay: 0.8s;
+}
+
+@keyframes popupBtn {
+    0% {
+        transform: scale(1);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.6);
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(2.2);
+        opacity: 0;
+    }
+}
+
+
+/* icon bounce  */
+
+@keyframes icon-bounce {
+    0%,
+    100%,
+    20%,
+    50%,
+    80% {
+        transform: translateY(0px);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
