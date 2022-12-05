@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../assets/css/style.min.css">
     <title>Agencija za biznis konsalting - Alchemy Solutions</title>
 
     <!-- Useful meta tags -->
@@ -16,8 +15,13 @@
     <meta name="google" content="notranslate">
     <meta name="format-detection" content="telephone=no">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../assets/img/favicon/favicon-16x16.ico" sizes="16x16">
+     <!-- Favicon -->
+     <link rel="icon" type="image/png" href="../assets/img/favicon/favicon-16x16.ico" sizes="16x16">
+     <!-- Swall CSS -->
+     <link rel="stylesheet" href="../assets/vendor/swall/sweetalert.css">
+     <!-- Main CSS -->
+     <link rel="stylesheet" href="../assets/css/style.min.css">
+     <link rel="stylesheet" href="../assets/css/customstyle.css">
 </head>
 
 <body class="page title-opacity-true">
@@ -139,21 +143,30 @@
                                 </div>
 
                                 <div class="spacer p-top-lg">
-                                    <form method="post" action="form.php" id="cf-1" class="contact-form">
+                                    <form method="post" enctype="multipart/form-data" id="form" class="contact-form">
                                         <div class="form-group form-group-xs">
-                                            <input name="cf-1-name" type="text" class="form-control form-control-lg bg-gray-light" id="cf-1-name" placeholder="Ime" required="required">
+                                            <input name="name" type="text"
+                                                class="form-control form-control-lg bg-gray-light" id="name"
+                                                placeholder="Ime" onblur="$(this).valid()">
+                                            <label for="name" class=""></label>
                                         </div>
 
                                         <div class="form-group form-group-xs">
-                                            <input name="cf-1-email" type="email" class="form-control form-control-lg bg-gray-light" id="cf-1-email" placeholder="E-mail" required="required">
+                                            <input name="email" type="email"
+                                                class="form-control form-control-lg bg-gray-light" id="email"
+                                                placeholder="E-mail" onblur="$(this).valid()">
+                                            <label for="email" class=""></label>
                                         </div>
 
                                         <div class="form-group form-group-xs">
-                                            <textarea name="cf-1-message" class="form-control form-control-lg bg-gray-light" id="cf-1-message" placeholder="Poruka" required="required"></textarea>
+                                            <textarea name="message"
+                                                class="form-control form-control-lg bg-gray-light" id="message"
+                                                placeholder="Poruka" onblur="$(this).valid()"></textarea>
+                                                <label for="message" class=""></label>
                                         </div>
 
                                         <div class="form-group form-group-xs mb-0">
-                                            <button type="submit" class="btn btn-outline-secondary">Poštalji</button>
+                                            <button type="submit" id="submit" class="btn btn-outline-secondary">Pošalji</button>
                                         </div>
                                     </form>
                                 </div>
@@ -305,6 +318,18 @@
 
     <!-- JS -->
     <script src="../assets/js/main.min.js"></script>
+    <!-- jQuery -->
+    <script src="../assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js"></script>
+    <!-- Contact js-->
+    <script type="text/javascript" language="javascript" src="../assets/js/contactrs.js"></script>
+    <script type="text/javascript" language="javascript" src="../assets/vendor/swall/sweetalert.js"></script>
+    <!-- Form validator -->
+    <script type="text/javascript" language="javascript" src="../assets/vendor/form-validation/jquery.form.js"></script>
+    <script type="text/javascript" language="javascript"
+        src="../assets/vendor/form-validation/jquery.validate.min.js"></script>
 </body>
 
 </html>
